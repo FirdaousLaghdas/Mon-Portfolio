@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Laghdas Firdaous, Future Ingénieure Mécatronique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================================= */
+        /* 1. STYLES GLOBALES & PALETTE ORIGINALE (Bleu Marine/Cyan) */
+        /* ========================================================= */
+        :root {
+            --color-primary: #0A1931; /* Bleu marine foncé (base technique) */
+            --color-secondary: #00BCD4; /* Cyan brillant (accent) */
+            --color-text: #E0E0E0; /* Texte clair */
+            --color-background: #121212; /* Arrière-plan très sombre */
+            --color-card: #1E2B4B; /* Fond des cartes de projet */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-secondary);
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        a {
+            color: var(--color-secondary);
+            text-decoration: none;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #00E5FF;
+        }
+
+        /* Styles de Sections */
+        #hero {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        #hero p.subtitle {
+            font-size: 1.5em;
+            font-weight: 300;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+        }
+        
+        #about {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-photo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--color-secondary);
+        }
+
+        #skills {
+            background-color: var(--color-primary);
+            padding: 60px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .skill-category {
+            background-color: var(--color-card);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid var(--color-secondary);
+        }
+
+        .skill-category h3 {
+            color: white;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #3A476E; 
+        }
+
+        #projects {
+            padding: 80px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--color-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 200px;
+            background-color: #3A476E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: white;
+            text-align: center;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            color: var(--color-secondary);
+        }
+
+        #contact {
+            background-color: var(--color-primary);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            font-size: 1.2em;
+            margin: 0 15px;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-photo {
+                order: -1; 
+                margin-bottom: 20px;
+            }
+            #hero h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="hero">
+        <div class="container">
+            <h1>LAGHDAS FIRDAOUS</h1>
+            <p class="subtitle">Future Ingénieure en Mécatronique (5ème Année)</p>
+            <p class="slogan">"Fusionner la conception mécanique et l'automatisation industrielle pour des solutions d'ingénierie innovantes."</p>
+            <a href="#projects" class="btn">DÉCOUVREZ MES PROJETS</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>À Propos de Moi</h2>
+            <div class="about-content">
+                <div class="about-photo">
+                    <img src="https://i.imgur.com/SZMbHKi.jpeg" alt="Photo professionnelle Laghdas Firdaous">
+                </div>
+                <div class="about-text">
+                    <p>
+                        Bonjour ! Je suis Laghdas Firdaous, actuellement élève ingénieure en 5ème année en Génie Mécatronique à l'École Nationale des Sciences Appliquées de Tétouan (ENSA).
+                    </p>
+                    <p>
+                        Ma passion réside dans la convergence des disciplines : donner vie à des conceptions mécaniques robustes en y intégrant l'électronique de contrôle et la programmation logicielle.
+                    </p>
+                    <p>
+                        Je suis à la recherche d'un **Stage PFE** pour appliquer mes compétences dans les domaines de l'automatisation, la robotique ou l'amélioration continue (Kaizen, DMAIC).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Conception & CAO</h3>
+                    <ul>
+                        <li>SOLIDWORKS (Certifiée)</li>
+                        <li>CATIA</li>
+                        <li>Modélisation 3D et Assemblage</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programmation & Automatisme</h3>
+                    <ul>
+                        <li>Langage Ladder (CX-Programmer et STEP 7)</li>
+                        <li>Arduino, VHDL & G-code</li>
+                        <li>C++ / Python pour systèmes embarqués</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Simulation & Électronique</h3>
+                    <ul>
+                        <li>MATLAB / Simulink</li>
+                        <li>ISIS Proteus</li>
+                        <li>Conception de Circuits (PCB), AutoCAD (Schémas)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Méthodologie & Qualité</h3>
+                    <ul>
+                        <li>Résolution de Problèmes (Méthode 8D, DMAIC)</li>
+                        <li>Amélioration Continue (Kaizen)</li>
+                        <li>Gestion de Projet & Gestion de Risque</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Mes Projets Clés</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <a href="pfa-banderoleuse.html"> 
+                        <div class="project-img">PFA: Conception et automatisation d'une banderoleuse semi-automatique</div>
+                        <div class="project-info">
+                            <h3>Automatisation Industrielle (PFA)</h3>
+                            <p>Programmation d'automate (Ladder/CX-Programmer) pour optimiser un système de banderolage (Réduction de 50% du temps).</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="systeme-differentiel.html"> 
+                        <div class="project-img">Système Différentiel Automobile</div>
+                        <div class="project-info">
+                            <h3>Contrôle & CAO Automobile</h3>
+                            <p>Modélisation 3D (SolidWorks) et simulation sous Simulink. Réalisation d'un prototype fonctionnel.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="drone-quadcopter.html"> 
+                        <div class="project-img">Drone Quadcopter</div>
+                        <div class="project-info">
+                            <h3>Conception Mécanique</h3>
+                            <p>Conception complète de la structure sous SolidWorks, axée sur l'optimisation du poids et de la rigidité.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="maison-intelligente.html"> 
+                        <div class="project-img">Maison Intelligente (IoT)</div>
+                        <div class="project-info">
+                            <h3>Systèmes Embarqués & Capteurs</h3>
+                            <p>Intégration de multiples capteurs (RFID, température, flamme, etc.) sur Arduino pour un système domotique.</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact & Opportunité PFE</h2>
+            <p>Je suis exclusivement à la recherche d'un Stage Projet Fin d'Études (PFE) pour l'année 2025/2026.</p>
+            <div class="contact-links">
+                <a href="mailto:firdaouslaghdas@gmail.com" target="_blank">
+                     <span style="font-size: 1.5em; vertical-align: middle;">📧</span> firdaouslaghdas@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/firdaous-laghdas-3a0a6026b" target="_blank">
+                    <span style="font-size: 1.5em; vertical-align: middle;">💼</span> Mon Profil LinkedIn
+                </a>
+            </div>
+            <p style="margin-top: 30px;">Tél: 0773352771 / 0687707781</p>
+        </div>
+    </section>
+
+</body>
+</html>

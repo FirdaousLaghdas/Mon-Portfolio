@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Projet - Banderoleuse Semi-Automatique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* STYLES DE BASE DU PORTFOLIO (Doit être identique ou lié à index.html) */
+        :root {
+            --color-primary: #0A1931; 
+            --color-secondary: #00BCD4; 
+            --color-text: #E0E0E0; 
+            --color-background: #121212; 
+            --color-card: #1E2B4B; 
+            --color-detail-bg: #1A3052;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            padding-top: 20px;
+        }
+        
+        h2 {
+            color: var(--color-secondary);
+            font-size: 2em;
+            margin-top: 40px;
+            border-bottom: 2px solid var(--color-card);
+            padding-bottom: 10px;
+            text-align: left;
+        }
+        
+        h3 {
+            color: var(--color-secondary);
+            font-size: 1.4em;
+            margin-top: 25px;
+        }
+
+        a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #00E5FF;
+        }
+
+        .header-detail {
+            background-color: var(--color-primary);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .media-item {
+            background-color: var(--color-detail-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .media-item img, .media-item iframe {
+            width: 100%;
+            max-width: 400px; /* Limite la taille des médias */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        ul {
+            margin-left: 20px;
+            padding: 10px 0;
+        }
+        
+        .video-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-detail">
+        <div class="container">
+            <h1>PFA : Conception et Automatisation d'une Banderoleuse</h1>
+            <p style="color: var(--color-secondary);">Projet de Fin d'Année (4ème Année) | Domaines : Automatisme, Mécanique, Amélioration Continue</p>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <h2>Description du Projet</h2>
+        <p>
+            Ce projet visait à concevoir, modéliser, et automatiser une machine de banderolage semi-automatique. L'objectif principal était de réduire le temps de cycle de 50% par rapport à la méthode manuelle précédente, tout en assurant une qualité de banderolage constante et sécurisée.
+        </p>
+        <p>
+            J'ai été responsable de l'ensemble du cycle de vie du projet, de l'étude de faisabilité à la programmation de l'automate.
+        </p>
+
+        <h2>Galerie Photos & Vidéos</h2>
+        <p>Visualisez ci-dessous les schémas électriques et le code ladder implementé dans l'automate.</p>
+        
+        <div class="media-grid">
+            <div class="media-item">
+                <img src="https://i.imgur.com/lEnJdlN.png" alt="schema de comande et de puissance de l'armoir electrique realisé ">
+            </div>
+
+            <div class="media-item">
+                <img src="https://i.imgur.com/a5ib95a.png" alt="Extrait du code Ladder">
+            </div>
+        </div>
+        
+        <div class="video-container">
+            <div class="video-wrapper">
+                <h3>Vidéo de Démonstration: cycle de bandrolage apres automatisation </h3>
+                <iframe 
+                    width="100%" height="450" 
+                    src="https://www.youtube.com/embed/XWGxPWt7Z2U" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-back">← Retour au Portfolio</a>
+    </div>
+
+</body>
+</html>
