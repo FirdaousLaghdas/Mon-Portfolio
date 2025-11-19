@@ -151,6 +151,7 @@
             border-bottom: 1px dashed #3A476E; 
         }
 
+
         #projects {
             padding: 80px 0;
         }
@@ -182,6 +183,7 @@
             font-size: 1.2em;
             color: white;
             text-align: center;
+            padding: 10px; 
         }
 
         .project-info {
@@ -192,6 +194,158 @@
             color: var(--color-secondary);
         }
 
+        /* =========================== */
+        /* STYLES POUR LE SLIDESHOW (Activités) */
+        /* =========================== */
+        #extracurricular {
+            padding: 60px 0;
+            background-color: var(--color-primary); 
+        }
+
+        .slideshow-container {
+          max-width: 1000px; 
+          position: relative;
+          margin: auto;
+          background-color: var(--color-card);
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mySlides {
+          display: none;
+        }
+        
+        /* Style pour les images du slide - CORRECTION */
+        .mySlides img {
+            width: 100%;
+            height: 350px; /* Légèrement réduit */
+            object-fit: contain; /* L'image est entièrement visible */
+            background-color: var(--color-card); /* Fond pour les espaces vides */
+            vertical-align: middle; 
+        }
+
+        /* Texte sur l'image - CORRECTION (pas de positionnement absolu) */
+        .slide-text {
+          color: #f2f2f2;
+          background-color: var(--color-primary); /* Fond plein pour la section texte */
+          width: 100%;
+          text-align: left;
+          padding: 20px 30px;
+        }
+        .slide-text h3 {
+            color: var(--color-secondary);
+            font-size: 1.5em;
+            margin-bottom: 5px; 
+        }
+        .slide-text h4 { /* Style pour sous-titre spécifique à la slide */
+            color: #FFFFFF; 
+            font-size: 1.1em;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        .slide-text p {
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        /* Boutons Next & previous */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 24px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+          background-color: rgba(0,188,212,0.8); 
+        }
+
+        /* Les points indicateurs */
+        .dot-container {
+            text-align: center;
+            padding-top: 20px;
+        }
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 4px;
+          background-color: var(--color-card); 
+          border: 2px solid var(--color-secondary); 
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+          background-color: var(--color-secondary); 
+        }
+
+        /* Animation Fade */
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.0s;
+        }
+
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+        
+        /* Media Queries pour la responsivité */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-photo {
+                order: -1; 
+                margin-bottom: 20px;
+            }
+            #hero h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            
+            .mySlides img {
+                height: 250px; /* Ajusté */
+            }
+            .slide-text {
+                padding: 15px;
+            }
+            .slide-text h3 {
+                font-size: 1.2em;
+            }
+            .slide-text h4 {
+                font-size: 0.9em;
+            }
+            .slide-text p {
+                font-size: 1em;
+            }
+            .prev, .next {
+                font-size: 18px;
+                padding: 12px;
+                top: 125px; /* Ajusté à la nouvelle hauteur de l'image mobile */
+            }
+        }
+        
+        /* Contact styles */
         #contact {
             background-color: var(--color-primary);
             padding: 60px 0;
@@ -208,23 +362,6 @@
             display: inline-block;
             padding: 10px;
         }
-
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about-photo {
-                order: -1; 
-                margin-bottom: 20px;
-            }
-            #hero h1 {
-                font-size: 2.5em;
-            }
-            h2 {
-                font-size: 2em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -232,7 +369,7 @@
     <section id="hero">
         <div class="container">
             <h1>LAGHDAS FIRDAOUS</h1>
-            <p class="subtitle">Future Ingénieure en Mécatronique </p>
+            <p class="subtitle">Future Ingénieure en Mécatronique (5ème Année)</p>
             <p class="slogan">"Fusionner la conception mécanique et l'automatisation industrielle pour des solutions d'ingénierie innovantes."</p>
             <a href="#projects" class="btn">DÉCOUVREZ MES PROJETS</a>
         </div>
@@ -249,15 +386,17 @@
                     <p>
                         Bonjour ! Je suis Laghdas Firdaous, actuellement élève ingénieure en 5ème année en Génie Mécatronique à l'École Nationale des Sciences Appliquées de Tétouan (ENSA).
                     </p>
-                    <p> passionnée par l’automobile et la conception mécanique et électronique, je combine des compétences techniques solides avec une forte implication parascolaire et associative. </p>
                     <p>
-                         Curieuse et motivée, je cherche à mettre en pratique mes connaissances à travers un stage PFE, apporter des solutions innovantes, et contribuer activement à des projets d’ingénierie stimulants
+                        Ma passion réside dans la convergence des disciplines : donner vie à des conceptions mécaniques robustes en y intégrant l'électronique de contrôle et la programmation logicielle.
+                    </p>
+                    <p>
+                        Je suis à la recherche d'un **Stage PFE** pour appliquer mes compétences dans les domaines de l'automatisation, la robotique ou l'amélioration continue (Kaizen, DMAIC).
                     </p>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <section id="skills">
         <div class="container">
             <h2>Compétences Techniques</h2>
@@ -347,27 +486,139 @@
         </div>
     </section>
 
-   <section id="contact">
-    <div class="container">
-        <h2>Contact & Opportunité PFE</h2>
-        <p>Je suis exclusivement à la recherche d'un Stage Projet Fin d'Études (PFE) pour l'année 2025/2026.</p>
-        <div class="contact-links">
-            <a href="mailto:firdaouslaghdas@gmail.com">
-                 <span style="font-size: 1.5em; vertical-align: middle;"></span> firdaouslaghdas@gmail.com
-            </a>
-            <a href="https://linkedin.com/in/firdaous-laghdas-3a0a6026b" target="_blank">
-                 <span style="font-size: 1.5em; vertical-align: middle;"></span> Mon Profil LinkedIn
-            </a>
-            <a href="CV Laghdas Firdaous PFE VF.pdf" download>
-                 <span style="font-size: 1.5em; vertical-align: middle;"></span> Télécharger mon CV (PDF)
-            </a>
+    <section id="extracurricular">
+        <div class="container">
+            <h2>Activités Parascolaires</h2>
+            
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <img src="https://i.imgur.com/VTVwAIT.jpeg" alt="Logistique compétition Robotique" style="width:100%">
+                    <div class="slide-text">
+                        <h3>Organisation de la 13ème édition de la Compétition Nationale de Robotique</h3>
+                        <h4>Gestion Logistique et Accueil de 20+ Équipes de Futurs Ingénieurs</h4>
+                        <p>Coordination des inscriptions, de l'hébergement et de la gestion des espaces pour garantir le bon déroulement de l'événement. Un rôle qui a développé ma rigueur organisationnelle.</p>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://i.imgur.com/vvyLFDG.jpeg" alt="Focus Technique compétition Robotique" style="width:100%">
+                    <div class="slide-text">
+                        <h3>Organisation de la 13ème édition de la Compétition Nationale de Robotique</h3>
+                        <h4>Focus Technique : Thème Biomédical et Mécatronique</h4>
+                        <p>Participation à la définition des règles techniques de la compétition et soutien actif aux équipes sur les défis liés à la mécatronique et au secteur biomédical.</p>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://i.imgur.com/JNnbZbI.jpeg" alt="Communication compétition Robotique" style="width:100%">
+                    <div class="slide-text">
+                        <h3>Organisation de la 13ème édition de la Compétition Nationale de Robotique</h3>
+                        <h4>Partenariats et Promotion : Assurer la visibilité et l'attractivité</h4>
+                        <p>Contribution à la recherche de sponsors et à la promotion de l'événement sur les réseaux sociaux. J'ai ainsi renforcé mes aptitudes en communication institutionnelle.</p>
+                    </div>
+                </div>
+
+
+                <div class="mySlides fade">
+                    <img src="https://i.imgur.com/0DPIxvG.jpeg" alt="Responsable Événementiel Club Mécatronique" style="width:100%">
+                    <div class="slide-text">
+                        <h3>Responsable Événementiel du Club Mécatronique</h3>
+                        <h4>Mandat 2024/2025 :Planification du calendrier annuel des activités du club (ateliers de codage, visites d'usines, conférences thématiques) et supervision de leur exécution. Expérience de leadership et de gestion d'équipe.</p>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://i.imgur.com/bcPQ55L.jpeg" alt="Conférences Journée Mécatronique" style="width:100%">
+                    <div class="slide-text">
+                        <h3>Organisation de la Journée Nationale de la Mécatronique</h3>
+                        <h4>Coordination des Conférences et Invitation des Experts Industriels</h4>
+                        <p>Gestion des intervenants, de l'agenda des conférences, et organisation de tables rondes pour faciliter l'échange entre étudiants et professionnels du secteur.</p>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://i.imgur.com/jxvL64K.jpeg" alt="Ateliers Journée Mécatronique" style="width:100%">
+                    <div class="slide-text">
+                        <h3>Organisation de la Journée Nationale de la Mécatronique</h3>
+                        <h4>Mise en place et Animation d'Ateliers Pratiques Thématiques</h4>
+                        <p>Organisation d'ateliers interactifs sur des sujets pratiques (ex: programmation d'API, initiation à la robotique) pour permettre aux participants d'acquérir des compétences concrètes.</p>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://i.imgur.com/zqKuKXW.jpeg" alt="Forum d'Entreprise" style="width:100%">
+                    <div class="slide-text">
+                        <h3>Membre du Comité d'Organisation du Forum d'Entreprise</h3>
+                        <h4>Édition 2023-2024 : Relations Entreprises et Logistique Générale</h4>
+                        <p>Contribution à la stratégie de démarchage des entreprises, et gestion des besoins logistiques (stands, signalétique) pour assurer un environnement optimal pour le recrutement et le networking.</p>
+                    </div>
+                </div>
+
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+            </div>
+
         </div>
-        <p style="margin-top: 30px;">Tél: 0773352771 / 0687707781</p>
-    </div>
-</section>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact & Opportunité PFE</h2>
+            <p>Je suis exclusivement à la recherche d'un Stage Projet Fin d'Études (PFE) pour l'année 2025/2026.</p>
+            <div class="contact-links">
+                <a href="mailto:firdaouslaghdas@gmail.com" target="_blank">
+                     <span style="font-size: 1.5em; vertical-align: middle;"></span> firdaouslaghdas@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/firdaous-laghdas-3a0a6026b" target="_blank">
+                    <span style="font-size: 1.5em; vertical-align: middle;"></span> Mon Profil LinkedIn
+                </a>
+            </div>
+            <p style="margin-top: 30px;">Tél: 0773352771 / 0687707781</p>
+        </div>
+    </section>
+
+
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Contrôles Next/previous
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Contrôles des points
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
 
 </body>
 </html>
-
-
-
